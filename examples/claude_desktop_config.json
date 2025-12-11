@@ -1,0 +1,11 @@
+{
+  "mcpServers": {
+    "datagovmy": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@lightyoruichi/datagovmy-mcp"
+      ]
+    }
+  }
+}1

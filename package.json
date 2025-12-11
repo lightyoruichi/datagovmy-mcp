@@ -1,0 +1,28 @@
+{
+    "name": "@lightyoruichi/datagovmy-mcp",
+    "version": "0.1.0",
+    "description": "MCP server for Malaysian government open data APIs (OpenDOSM and Data Catalogue)",
+    "bin": {
+        "datagovmy-mcp": "./cli.js"
+    },
+    "scripts": {
+        "setup": "cd python && pip install -e ."
+    },
+    "keywords": [
+        "mcp",
+        "model-context-protocol",
+        "malaysia",
+        "data",
+        "opendosm"
+    ],
+    "author": "lightyoruichi",
+    "license": "MIT",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/lightyoruichi/datagovmy-mcp.git"
+    },
+    "files": [
+        "cli.js",
+        "python/"
+    ]
+}
