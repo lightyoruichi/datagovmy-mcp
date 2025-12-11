@@ -336,28 +336,173 @@ Alternatively, you can use the direct path to `cli.js`:
 }
 ```
 
-### Finding Dataset IDs
+### Discovering Datasets
 
-Dataset IDs are not available through an API endpoint - you need to browse the data catalogues:
+You have multiple ways to discover available datasets:
 
-1. **OpenDOSM Datasets**: Visit [open.dosm.gov.my/data-catalogue](https://open.dosm.gov.my/data-catalogue)
-2. **Data Catalogue Datasets**: Visit [data.gov.my/data-catalogue](https://data.gov.my/data-catalogue)
+#### 1. Use Discovery Tools (Recommended)
 
-On each dataset page, scroll down to the **"Sample OpenAPI query"** section to find the dataset ID.
+The server provides built-in tools to search and explore datasets:
 
-#### Popular Dataset IDs
+```
+# Ask your AI assistant:
+"What datasets are available about fuel prices?"
+"List all datasets in the Prices category"
+"Show me datasets related to GDP"
+```
 
-**OpenDOSM** (`query_opendosm` tool):
-- `cpi_core` - Core Consumer Price Index
-- `gdp` - Gross Domestic Product
-- `population` - Population statistics
-- `unemployment` - Unemployment data
+The AI will use the `search_datasets` and `list_datasets` tools automatically to find relevant data.
 
-**Data Catalogue** (`query_data_catalogue` tool):
-- `fuelprice` - Weekly fuel prices
-- `healthcare` - Healthcare statistics
-- `crime` - Crime statistics
-- `education` - Education data
+#### 2. Browse Categorized Datasets
+
+<details>
+<summary><b>💰 Economy & Finance</b> (OpenDOSM)</summary>
+
+- **`gdp`** - Gross Domestic Product
+- **`gdp_qtr`** - GDP by Quarter
+- **`gdp_annual`** - GDP Annual
+- **`ppi`** - Producer Price Index
+- **`trade`** - International Trade
+- **`banking`** - Banking Statistics
+- **`foreign_exchange`** - Foreign Exchange Rates
+- **`property_prices`** - Property Prices
+
+**Keywords**: economy, gdp, growth, national accounts, trade, finance
+
+</details>
+
+<details>
+<summary><b>📊 Prices & Inflation</b> (OpenDOSM & Data Catalogue)</summary>
+
+- **`cpi`** - Consumer Price Index
+- **`cpi_core`** - Core Consumer Price Index
+- **`inflation`** - Inflation Rate
+- **`fuelprice`** - Weekly Fuel Prices (RON95, RON97, Diesel)
+- **`ppi`** - Producer Price Index
+
+**Keywords**: prices, inflation, cpi, cost of living, fuel, petrol
+
+</details>
+
+<details>
+<summary><b>👥 Population & Demography</b> (OpenDOSM)</summary>
+
+- **`population`** - Population Statistics
+- **`population_malaysia`** - Population of Malaysia
+- **`population_state`** - Population by State
+- **`births`** - Live Births
+- **`deaths`** - Deaths
+- **`marriage`** - Marriages
+- **`divorce`** - Divorces
+
+**Keywords**: population, demography, births, deaths, fertility, mortality
+
+</details>
+
+<details>
+<summary><b>💼 Labour & Employment</b> (OpenDOSM)</summary>
+
+- **`unemployment`** - Unemployment Rate
+- **`lfs_monthly`** - Labour Force Survey (Monthly)
+- **`wages`** - Wages and Salaries
+
+**Keywords**: unemployment, labour, jobs, work, employment, workforce, wages, salary
+
+</details>
+
+<details>
+<summary><b>🏥 Healthcare</b> (OpenDOSM & Data Catalogue)</summary>
+
+- **`healthcare`** - Healthcare Statistics
+- **`blood_donation`** - Blood Donation
+- **`hospital_beds`** - Hospital Beds
+- **`covid_cases`** - COVID-19 Cases
+- **`covid_vaccination`** - COVID-19 Vaccination
+
+**Keywords**: healthcare, medical, health, hospitals, covid, pandemic
+
+</details>
+
+<details>
+<summary><b>🏠 Households & Welfare</b> (OpenDOSM)</summary>
+
+- **`poverty`** - Poverty Statistics
+- **`hh_income`** - Household Income
+
+**Keywords**: poverty, income, household, earnings, welfare
+
+</details>
+
+<details>
+<summary><b>🌍 Environment</b> (OpenDOSM & Data Catalogue)</summary>
+
+- **`electricity`** - Electricity Statistics
+- **`renewable_energy`** - Renewable Energy
+- **`rainfall`** - Rainfall Data
+- **`air_quality`** - Air Quality Index
+- **`water_quality`** - Water Quality
+
+**Keywords**: environment, energy, electricity, renewable, weather, climate, pollution
+
+</details>
+
+<details>
+<summary><b>🚔 Public Safety</b> (OpenDOSM & Data Catalogue)</summary>
+
+- **`crime`** - Crime Statistics
+
+**Keywords**: crime, safety, police, law enforcement
+
+</details>
+
+<details>
+<summary><b>🚗 Transportation</b> (Data Catalogue)</summary>
+
+- **`traffic`** - Traffic Data
+- **`vehicle_registration`** - Vehicle Registration
+- **`public_transport`** - Public Transport Ridership
+
+**Keywords**: traffic, transportation, vehicles, cars, bus, train
+
+</details>
+
+<details>
+<summary><b>🏭 Economic Sectors</b> (Data Catalogue)</summary>
+
+- **`agriculture`** - Agricultural Production
+- **`manufacturing`** - Manufacturing Statistics
+- **`construction`** - Construction Statistics
+
+**Keywords**: agriculture, farming, manufacturing, industry, construction
+
+</details>
+
+<details>
+<summary><b>📚 Education</b> (Data Catalogue)</summary>
+
+- **`education`** - Education Statistics
+
+**Keywords**: education, schools, students, enrollment
+
+</details>
+
+<details>
+<summary><b>🌴 Tourism</b> (Data Catalogue)</summary>
+
+- **`tourist_arrivals`** - Tourist Arrivals
+
+**Keywords**: tourism, tourists, arrivals, travel
+
+</details>
+
+#### 3. Manual Browse (Alternative)
+
+If you prefer, you can still browse the data catalogues directly:
+
+1. **OpenDOSM Datasets**: [open.dosm.gov.my/data-catalogue](https://open.dosm.gov.my/data-catalogue)
+2. **Data Catalogue Datasets**: [data.gov.my/data-catalogue](https://data.gov.my/data-catalogue)
+
+On each dataset page, scroll to the **"Sample OpenAPI query"** section to find the dataset ID.
 
 ### Tools
 
@@ -406,6 +551,55 @@ On each dataset page, scroll down to the **"Sample OpenAPI query"** section to f
   - Example use cases:
     - Get fuel price metadata: `dataset_id='fuelprice', source='data_catalogue'`
     - Get CPI metadata: `dataset_id='cpi_core', source='opendosm'`
+
+</details>
+
+<details>
+<summary><b>Dataset Discovery</b></summary>
+
+<!-- Tools documentation -->
+
+- **list_datasets**
+  - Title: List Available Datasets
+  - Description: List all available datasets with optional filtering
+  - Parameters:
+    - `source` (string, optional): Filter by source - 'opendosm', 'data_catalogue', or None for all
+    - `category` (string, optional): Filter by category (e.g., 'Prices', 'Demography', 'Economy')
+    - `limit` (integer, optional): Maximum number of datasets to return (default: 100)
+    - `offset` (integer, optional): Number of datasets to skip for pagination (default: 0)
+  - Read-only: **true**
+  - Example use cases:
+    - List all datasets: (no parameters)
+    - List OpenDOSM datasets: `source='opendosm'`
+    - List price-related datasets: `category='Prices'`
+
+<!-- Tools documentation -->
+
+- **search_datasets**
+  - Title: Search Datasets
+  - Description: Search for datasets by keyword
+  - Parameters:
+    - `query` (string, required): Search query (searches in name, description, keywords, and ID)
+    - `source` (string, optional): Filter by source - 'opendosm', 'data_catalogue', or None for all
+    - `limit` (integer, optional): Maximum number of results to return (default: 10)
+  - Read-only: **true**
+  - Example use cases:
+    - Search for fuel data: `query='fuel'`
+    - Search for GDP: `query='gdp'`
+    - Search for population: `query='population'`
+
+<!-- Tools documentation -->
+
+- **get_dataset_schema**
+  - Title: Get Dataset Schema
+  - Description: Get schema, metadata, and sample data for a dataset
+  - Parameters:
+    - `dataset_id` (string, required): Dataset ID to get schema for
+    - `source` (string, required): Data source - either 'opendosm' or 'data_catalogue'
+  - Read-only: **true**
+  - Example use cases:
+    - Get fuel price schema: `dataset_id='fuelprice', source='data_catalogue'`
+    - Get GDP schema: `dataset_id='gdp', source='opendosm'`
 
 </details>
 
