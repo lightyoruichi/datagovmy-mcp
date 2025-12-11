@@ -18,7 +18,9 @@ function findPython() {
     }
   }
 
-  throw new Error('Python 3 is required but not found. Please install Python 3.10 or newer.');
+  console.error('\nError: Python 3 is required but not found.');
+  console.error('Please install Python 3.10 or newer from https://www.python.org/\n');
+  process.exit(1);
 }
 
 // Start the Python MCP server
@@ -30,6 +32,7 @@ function startServer() {
   // Check if dependencies are installed
   const checkDeps = require('child_process').spawnSync(python, ['-c', 'import mcp'], {
     cwd: serverPath,
+    stdio: 'pipe',
     env: {
       ...process.env,
       PYTHONPATH: srcPath
@@ -37,16 +40,17 @@ function startServer() {
   });
 
   if (checkDeps.status !== 0) {
-    console.error('Installing Python dependencies...');
-    const install = require('child_process').spawnSync(python, ['-m', 'pip', 'install', '--user', '-e', '.'], {
-      cwd: serverPath,
-      stdio: 'inherit'
-    });
-
-    if (install.status !== 0) {
-      console.error('Failed to install Python dependencies');
-      process.exit(1);
-    }
+    console.error('\n❌ Error: Python dependencies are not installed.\n');
+    console.error('Please run one of the following setup commands:\n');
+    console.error('  Using uv (recommended):');
+    console.error('    uv pip install ' + path.join(serverPath, '.'));
+    console.error('');
+    console.error('  Using pip:');
+    console.error('    pip install ' + path.join(serverPath, '.'));
+    console.error('');
+    console.error('For more information, see:');
+    console.error('  https://github.com/lightyoruichi/datagovmy-mcp#installation\n');
+    process.exit(1);
   }
 
   const server = spawn(python, ['-m', 'datagovmy_mcp.server'], {

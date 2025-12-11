@@ -9,15 +9,170 @@ A Model Context Protocol (MCP) server that provides AI assistants with programma
 - **Easy integration**. Simple tool interface for querying datasets, filtering, and pagination.
 
 ### Requirements
-- Python 3.10 or newer
-- Node.js 18 or newer (for `npx` command)
+
+- **Python 3.10 or newer** - [Download Python](https://www.python.org/downloads/)
+- **Node.js 18 or newer** (for `npx` method) - [Download Node.js](https://nodejs.org/)
+- **uv** (recommended) - Fast Python package installer - [Install uv](https://docs.astral.sh/uv/getting-started/installation/)
 - VS Code, Cursor, Windsurf, Claude Desktop, Goose or any other MCP client
+
+### Troubleshooting Installation Issues
+
+If you encounter errors during installation, run these commands **before** installing:
+
+<details>
+<summary><b>❌ "externally-managed-environment" error (macOS)</b></summary>
+
+If you see this error on macOS:
+```
+error: externally-managed-environment
+× This environment is externally managed
+```
+
+**Solution**: Use `uv` instead of `pip`:
+```bash
+# Install uv (one-time setup)
+curl -LsSf https://astral.sh/uv/install.sh | sh
+
+# Then install the package
+uv pip install /Users/lightyoruichi/Dev/datagovmy-mcp/python
+```
+
+Or use the `--user` flag with pip:
+```bash
+pip install --user /Users/lightyoruichi/Dev/datagovmy-mcp/python
+```
+
+</details>
+
+<details>
+<summary><b>❌ "Permission denied" error (Linux/macOS)</b></summary>
+
+If you see permission errors:
+
+**Solution 1**: Use `uv` (recommended):
+```bash
+curl -LsSf https://astral.sh/uv/install.sh | sh
+uv pip install /path/to/datagovmy-mcp/python
+```
+
+**Solution 2**: Use `--user` flag:
+```bash
+pip install --user /path/to/datagovmy-mcp/python
+```
+
+**Don't use `sudo`** - this can break your Python installation.
+
+</details>
+
+<details>
+<summary><b>❌ "pip: command not found"</b></summary>
+
+If `pip` is not installed:
+
+**macOS/Linux**:
+```bash
+# Install uv (recommended)
+curl -LsSf https://astral.sh/uv/install.sh | sh
+
+# Or install pip
+python3 -m ensurepip --upgrade
+```
+
+**Windows**:
+```powershell
+# Install uv (recommended)
+powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | iex"
+
+# Or install pip
+python -m ensurepip --upgrade
+```
+
+</details>
+
+<details>
+<summary><b>❌ "mcp module not found" when running</b></summary>
+
+This means Python dependencies aren't installed. Run:
+
+**Using uv (recommended)**:
+```bash
+uv pip install /path/to/datagovmy-mcp/python
+```
+
+**Using pip**:
+```bash
+pip install /path/to/datagovmy-mcp/python
+```
+
+</details>
+
+<details>
+<summary><b>❌ Windows: "python: command not found"</b></summary>
+
+Python is not in your PATH. Either:
+
+1. **Reinstall Python** with "Add to PATH" checked
+2. **Use full path**:
+   ```powershell
+   # Find Python location
+   where python
+   
+   # Use full path in configuration
+   C:\Users\YourName\AppData\Local\Programs\Python\Python311\python.exe
+   ```
+
+</details>
 
 ### Getting started
 
-First, install the Malaysia Data Government MCP server with your client.
+#### Method 1: Using `uvx` (Recommended - Works Everywhere)
 
-**Standard config** works in most of the tools:
+The easiest cross-platform installation:
+
+```bash
+# One-time install of uv (if not already installed)
+# macOS/Linux:
+curl -LsSf https://astral.sh/uv/install.sh | sh
+
+# Windows:
+powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | iex"
+
+# Then run the server directly with uvx
+uvx --from /Users/lightyoruichi/Dev/datagovmy-mcp/python datagovmy-mcp
+```
+
+**MCP Client Configuration** (recommended):
+```json
+{
+  "mcpServers": {
+    "datagovmy": {
+      "command": "uvx",
+      "args": [
+        "--from",
+        "/Users/lightyoruichi/Dev/datagovmy-mcp/python",
+        "datagovmy-mcp"
+      ]
+    }
+  }
+}
+```
+
+#### Method 2: Using `npx` (Requires Setup First)
+
+First, install Python dependencies:
+
+```bash
+# Navigate to the python directory
+cd /Users/lightyoruichi/Dev/datagovmy-mcp/python
+
+# Install dependencies using uv (recommended)
+uv pip install -e .
+
+# Or using regular pip
+pip install -e .
+```
+
+Then configure your MCP client:
 
 ```js
 {
