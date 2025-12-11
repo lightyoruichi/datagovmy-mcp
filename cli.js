@@ -38,7 +38,7 @@ function startServer() {
 
   if (checkDeps.status !== 0) {
     console.error('Installing Python dependencies...');
-    const install = require('child_process').spawnSync(python, ['-m', 'pip', 'install', '-e', '.'], {
+    const install = require('child_process').spawnSync(python, ['-m', 'pip', 'install', '--user', '-e', '.'], {
       cwd: serverPath,
       stdio: 'inherit'
     });
