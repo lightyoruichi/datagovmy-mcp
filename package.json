@@ -3,7 +3,7 @@
     "version": "0.1.0",
     "description": "MCP server for Malaysian government open data APIs (OpenDOSM and Data Catalogue)",
     "bin": {
-        "datagovmy-mcp": "./cli.js"
+        "datagovmy-mcp": "cli.js"
     },
     "scripts": {
         "setup": "cd python && pip install -e ."

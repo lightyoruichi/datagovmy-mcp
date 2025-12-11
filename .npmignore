@@ -1,12 +1,16 @@
-# Python files
+# Python cache files
 __pycache__/
 *.py[cod]
 *$py.class
+*.pyc
 *.so
 .Python
 .venv/
 venv/
 ENV/
+python/**/__pycache__/
+*.egg
+*.egg-info
 
 # Test files
 test_*.py
@@ -16,6 +20,9 @@ test_*.py
 .DS_Store
 .gitignore
 .git
+
+# Node modules
+node_modules/
 
 # Keep only necessary files for npm
 !cli.js
