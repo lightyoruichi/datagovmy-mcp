@@ -1,0 +1,520 @@
+{
+    "opendosm": [
+        {
+            "id": "gdp",
+            "name": "Gross Domestic Product (GDP)",
+            "description": "Quarterly and annual GDP data for Malaysia",
+            "category": "National Accounts",
+            "keywords": [
+                "economy",
+                "gdp",
+                "growth",
+                "national accounts"
+            ]
+        },
+        {
+            "id": "gdp_qtr",
+            "name": "GDP by Quarter",
+            "description": "Quarterly GDP estimates and growth rates",
+            "category": "National Accounts",
+            "keywords": [
+                "economy",
+                "gdp",
+                "quarterly",
+                "growth"
+            ]
+        },
+        {
+            "id": "gdp_annual",
+            "name": "GDP Annual",
+            "description": "Annual GDP data and statistics",
+            "category": "National Accounts",
+            "keywords": [
+                "economy",
+                "gdp",
+                "annual",
+                "yearly"
+            ]
+        },
+        {
+            "id": "cpi",
+            "name": "Consumer Price Index (CPI)",
+            "description": "Overall Consumer Price Index data",
+            "category": "Prices",
+            "keywords": [
+                "prices",
+                "inflation",
+                "cpi",
+                "cost of living"
+            ]
+        },
+        {
+            "id": "cpi_core",
+            "name": "Core Consumer Price Index",
+            "description": "CPI excluding volatile items",
+            "category": "Prices",
+            "keywords": [
+                "prices",
+                "inflation",
+                "core",
+                "cpi"
+            ]
+        },
+        {
+            "id": "inflation",
+            "name": "Inflation Rate",
+            "description": "Overall and core inflation rates",
+            "category": "Prices",
+            "keywords": [
+                "inflation",
+                "prices",
+                "rate"
+            ]
+        },
+        {
+            "id": "population_malaysia",
+            "name": "Population of Malaysia",
+            "description": "National level population estimates",
+            "category": "Demography",
+            "keywords": [
+                "population",
+                "demography",
+                "malaysia"
+            ]
+        },
+        {
+            "id": "population_state",
+            "name": "Population by State",
+            "description": "State-level population data",
+            "category": "Demography",
+            "keywords": [
+                "population",
+                "state",
+                "demography"
+            ]
+        },
+        {
+            "id": "population",
+            "name": "Population Statistics",
+            "description": "Comprehensive population data",
+            "category": "Demography",
+            "keywords": [
+                "population",
+                "demography",
+                "statistics"
+            ]
+        },
+        {
+            "id": "births",
+            "name": "Live Births",
+            "description": "Daily live births data",
+            "category": "Demography",
+            "keywords": [
+                "births",
+                "fertility",
+                "demography"
+            ]
+        },
+        {
+            "id": "deaths",
+            "name": "Deaths",
+            "description": "Daily deaths data",
+            "category": "Demography",
+            "keywords": [
+                "deaths",
+                "mortality",
+                "demography"
+            ]
+        },
+        {
+            "id": "unemployment",
+            "name": "Unemployment Rate",
+            "description": "Unemployment statistics",
+            "category": "Labour Markets",
+            "keywords": [
+                "unemployment",
+                "labour",
+                "jobs",
+                "work"
+            ]
+        },
+        {
+            "id": "lfs_monthly",
+            "name": "Labour Force Survey - Monthly",
+            "description": "Monthly labour force statistics",
+            "category": "Labour Markets",
+            "keywords": [
+                "labour",
+                "employment",
+                "workforce",
+                "monthly"
+            ]
+        },
+        {
+            "id": "wages",
+            "name": "Wages and Salaries",
+            "description": "Wage statistics across sectors",
+            "category": "Labour Markets",
+            "keywords": [
+                "wages",
+                "salary",
+                "income",
+                "earnings"
+            ]
+        },
+        {
+            "id": "ppi",
+            "name": "Producer Price Index",
+            "description": "PPI for various sectors",
+            "category": "Prices",
+            "keywords": [
+                "prices",
+                "producer",
+                "ppi",
+                "manufacturing"
+            ]
+        },
+        {
+            "id": "blood_donation",
+            "name": "Blood Donation",
+            "description": "Blood donation statistics",
+            "category": "Healthcare",
+            "keywords": [
+                "healthcare",
+                "blood",
+                "donation"
+            ]
+        },
+        {
+            "id": "hospital_beds",
+            "name": "Hospital Beds",
+            "description": "Hospital bed capacity and utilization",
+            "category": "Healthcare",
+            "keywords": [
+                "healthcare",
+                "hospitals",
+                "beds",
+                "capacity"
+            ]
+        },
+        {
+            "id": "marriage",
+            "name": "Marriages",
+            "description": "Marriage registration statistics",
+            "category": "Demography",
+            "keywords": [
+                "marriage",
+                "family",
+                "demography"
+            ]
+        },
+        {
+            "id": "divorce",
+            "name": "Divorces",
+            "description": "Divorce statistics",
+            "category": "Demography",
+            "keywords": [
+                "divorce",
+                "family",
+                "demography"
+            ]
+        },
+        {
+            "id": "crime",
+            "name": "Crime Statistics",
+            "description": "Crime rates and incidents",
+            "category": "Public Safety",
+            "keywords": [
+                "crime",
+                "safety",
+                "police",
+                "law"
+            ]
+        },
+        {
+            "id": "poverty",
+            "name": "Poverty",
+            "description": "Poverty statistics and measures",
+            "category": "Households",
+            "keywords": [
+                "poverty",
+                "income",
+                "households"
+            ]
+        },
+        {
+            "id": "hh_income",
+            "name": "Household Income",
+            "description": "Household income distribution",
+            "category": "Households",
+            "keywords": [
+                "income",
+                "household",
+                "earnings"
+            ]
+        },
+        {
+            "id": "electricity",
+            "name": "Electricity Statistics",
+            "description": "Electricity generation and consumption",
+            "category": "Environment",
+            "keywords": [
+                "electricity",
+                "energy",
+                "power"
+            ]
+        },
+        {
+            "id": "renewable_energy",
+            "name": "Renewable Energy",
+            "description": "Renewable energy statistics",
+            "category": "Environment",
+            "keywords": [
+                "energy",
+                "renewable",
+                "green",
+                "environment"
+            ]
+        }
+    ],
+    "data_catalogue": [
+        {
+            "id": "fuelprice",
+            "name": "Weekly Fuel Prices",
+            "description": "RON95, RON97, and Diesel prices updated weekly",
+            "category": "Prices",
+            "keywords": [
+                "fuel",
+                "petrol",
+                "gas",
+                "diesel",
+                "ron95",
+                "ron97",
+                "prices"
+            ]
+        },
+        {
+            "id": "healthcare",
+            "name": "Healthcare Statistics",
+            "description": "General healthcare data and statistics",
+            "category": "Healthcare",
+            "keywords": [
+                "healthcare",
+                "medical",
+                "health"
+            ]
+        },
+        {
+            "id": "crime",
+            "name": "Crime Data",
+            "description": "Crime statistics and reports",
+            "category": "Public Safety",
+            "keywords": [
+                "crime",
+                "police",
+                "safety",
+                "law enforcement"
+            ]
+        },
+        {
+            "id": "education",
+            "name": "Education Statistics",
+            "description": "Educational institutions and enrollment data",
+            "category": "Education",
+            "keywords": [
+                "education",
+                "schools",
+                "students",
+                "enrollment"
+            ]
+        },
+        {
+            "id": "covid_cases",
+            "name": "COVID-19 Cases",
+            "description": "Daily COVID-19 case statistics",
+            "category": "Healthcare",
+            "keywords": [
+                "covid",
+                "pandemic",
+                "cases",
+                "healthcare"
+            ]
+        },
+        {
+            "id": "covid_vaccination",
+            "name": "COVID-19 Vaccination",
+            "description": "COVID-19 vaccination statistics",
+            "category": "Healthcare",
+            "keywords": [
+                "covid",
+                "vaccination",
+                "vaccine",
+                "healthcare"
+            ]
+        },
+        {
+            "id": "rainfall",
+            "name": "Rainfall Data",
+            "description": "Daily rainfall measurements across Malaysia",
+            "category": "Environment",
+            "keywords": [
+                "weather",
+                "rain",
+                "climate",
+                "environment"
+            ]
+        },
+        {
+            "id": "air_quality",
+            "name": "Air Quality Index",
+            "description": "Air quality measurements and API readings",
+            "category": "Environment",
+            "keywords": [
+                "air quality",
+                "pollution",
+                "api",
+                "environment"
+            ]
+        },
+        {
+            "id": "water_quality",
+            "name": "Water Quality",
+            "description": "Water quality monitoring data",
+            "category": "Environment",
+            "keywords": [
+                "water",
+                "quality",
+                "environment"
+            ]
+        },
+        {
+            "id": "traffic",
+            "name": "Traffic Data",
+            "description": "Traffic volume and flow statistics",
+            "category": "Transportation",
+            "keywords": [
+                "traffic",
+                "transportation",
+                "vehicles"
+            ]
+        },
+        {
+            "id": "vehicle_registration",
+            "name": "Vehicle Registration",
+            "description": "Vehicle registration statistics",
+            "category": "Transportation",
+            "keywords": [
+                "vehicles",
+                "cars",
+                "registration",
+                "transportation"
+            ]
+        },
+        {
+            "id": "public_transport",
+            "name": "Public Transport Ridership",
+            "description": "Public transportation usage statistics",
+            "category": "Transportation",
+            "keywords": [
+                "public transport",
+                "bus",
+                "train",
+                "ridership"
+            ]
+        },
+        {
+            "id": "property_prices",
+            "name": "Property Prices",
+            "description": "Residential and commercial property price indices",
+            "category": "Economy",
+            "keywords": [
+                "property",
+                "housing",
+                "real estate",
+                "prices"
+            ]
+        },
+        {
+            "id": "tourist_arrivals",
+            "name": "Tourist Arrivals",
+            "description": "International tourist arrival statistics",
+            "category": "Economy",
+            "keywords": [
+                "tourism",
+                "tourists",
+                "arrivals",
+                "travel"
+            ]
+        },
+        {
+            "id": "trade",
+            "name": "International Trade",
+            "description": "Import and export statistics",
+            "category": "Economy",
+            "keywords": [
+                "trade",
+                "import",
+                "export",
+                "economy"
+            ]
+        },
+        {
+            "id": "agriculture",
+            "name": "Agricultural Production",
+            "description": "Agricultural commodity production data",
+            "category": "Economic Sectors",
+            "keywords": [
+                "agriculture",
+                "farming",
+                "crops",
+                "production"
+            ]
+        },
+        {
+            "id": "manufacturing",
+            "name": "Manufacturing Statistics",
+            "description": "Manufacturing sector data",
+            "category": "Economic Sectors",
+            "keywords": [
+                "manufacturing",
+                "industry",
+                "production"
+            ]
+        },
+        {
+            "id": "construction",
+            "name": "Construction Statistics",
+            "description": "Construction sector activity data",
+            "category": "Economic Sectors",
+            "keywords": [
+                "construction",
+                "building",
+                "development"
+            ]
+        },
+        {
+            "id": "banking",
+            "name": "Banking Statistics",
+            "description": "Banking sector data and indicators",
+            "category": "Financial Markets",
+            "keywords": [
+                "banking",
+                "finance",
+                "loans",
+                "deposits"
+            ]
+        },
+        {
+            "id": "foreign_exchange",
+            "name": "Foreign Exchange Rates",
+            "description": "Daily currency exchange rates",
+            "category": "Financial Markets",
+            "keywords": [
+                "currency",
+                "forex",
+                "exchange rate",
+                "ringgit"
+            ]
+        }
+    ]
+}

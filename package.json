@@ -1,6 +1,6 @@
 {
     "name": "@lightyoruichi/datagovmy-mcp",
-    "version": "0.3.0",
+    "version": "0.3.1",
     "description": "MCP server for Malaysian government open data APIs (OpenDOSM and Data Catalogue)",
     "type": "module",
     "main": "./dist/index.js",
