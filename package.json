@@ -1,19 +1,28 @@
 {
     "name": "@lightyoruichi/datagovmy-mcp",
-    "version": "0.2.2",
+    "version": "0.3.0",
     "description": "MCP server for Malaysian government open data APIs (OpenDOSM and Data Catalogue)",
+    "type": "module",
+    "main": "./dist/index.js",
     "bin": {
-        "datagovmy-mcp": "cli.js"
+        "datagovmy-mcp": "./dist/index.js"
     },
     "scripts": {
-        "setup": "cd python && pip install -e ."
+        "build": "tsc",
+        "dev": "tsx src/index.ts",
+        "lint": "eslint src/**/*.ts",
+        "lint:fix": "eslint src/**/*.ts --fix",
+        "type-check": "tsc --noEmit",
+        "prepublishOnly": "npm run type-check && npm run lint && npm run build"
     },
     "keywords": [
         "mcp",
         "model-context-protocol",
         "malaysia",
         "data",
-        "opendosm"
+        "opendosm",
+        "government",
+        "open-data"
     ],
     "author": "lightyoruichi",
     "license": "MIT",
@@ -22,10 +31,21 @@
         "url": "git+https://github.com/lightyoruichi/datagovmy-mcp.git"
     },
     "files": [
-        "cli.js",
-        "python/"
+        "dist/",
+        "src/datasets.json"
     ],
     "dependencies": {
-        "@lightyoruichi/datagovmy-mcp": "^0.2.0"
+        "@modelcontextprotocol/sdk": "^1.0.4",
+        "zod": "^3.24.1"
+    },
+    "devDependencies": {
+        "@eslint/js": "^9.39.1",
+        "@types/node": "^22.10.2",
+        "@typescript-eslint/eslint-plugin": "^8.49.0",
+        "@typescript-eslint/parser": "^8.49.0",
+        "eslint": "^9.39.1",
+        "tsx": "^4.19.2",
+        "typescript": "^5.7.2",
+        "typescript-eslint": "^8.49.0"
     }
 }
